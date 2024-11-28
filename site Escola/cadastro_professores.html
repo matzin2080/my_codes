@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://example.com" />
+    <title>Cadastro de Professores - CEMI</title>
+</head>
+
+<style>
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #1a6bb0, #14456e);
+}
+
+/* Container Principal */
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Título */
+h1 {
+    color: #14456e;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #1a6bb0;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #14456e;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #1a6bb0;
+}
+
+.btn-submit {
+    background: #1a6bb0;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #14456e;
+}
+
+.success-message {
+    display: none;
+    color: #28a745;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Estilização de Erros */
+.error {
+    border-color: #dc3545 !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="password"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .success {
+            color: green;
+            font-size: 12px;
+        }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Professores</h1>
+        <form id="teacherForm" onsubmit="return validateForm(event)">
+            <!-- Nome -->
+            <div class="form-group">
+                <label for="name">Nome Completo*</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error-message" id="nameError">Por favor, insira um nome válido</div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError">Por favor, insira um e-mail válido</div>
+            </div>
+
+            <!-- Telefone -->
+            <div class="form-group">
+                <label for="phone">Telefone*</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phoneError">Por favor, insira um telefone válido</div>
+            </div>
+
+            <!-- Disciplina -->
+            <div class="form-group">
+                <label for="subject">Disciplina Principal*</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Selecione uma disciplina</option>
+                    <option value="matematica">Matemática</option>
+                    <option value="portugues">Português</option>
+                    <option value="biologia">Biologia</option>
+                    <option value="quimica">Química</option>
+                    <option value="fisica">Física</option>
+                    <option value="historia">História</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="ingles">Inglês</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="educacao_fisica">Educação Física</option>
+                    <option value="artes">Artes</option>
+                    <option value="computacao">Computação</option>
+                    <option value="ingles_inst">Inglês Instrumental</option>
+                    <option value="filosofia">Filosofia</option>
+                    <option value="cad">CAD</option>
+                    <option value="ppm">PPM</option>
+                    <option value="pv">Projeto de Vida</option>
+                    <option value="ia2d">IA2D</option>
+                    <option value="sociologia">Sociologia</option>
+                    <option value="pplp">PPLP</option>
+                    <option value="elab_proj">Elaboração de Projeto</option>
+                    <option value="dg3d">DG3D</option>
+                    <option value="ed_pos">Pós Edição</option>
+                    <option value="cri_ima">Criação de Imagem</option>
+                    <option value="hist_arte">História da Arte</option>
+                    <option value="pp">PP</option>
+                    <option value="empre">Empreendedorismo</option>
+                    <option value="seg_trab">Segurança do Trabalho</option>
+                    <option value="etica">Ética</option>
+                    <option value="nala">NALA</option>
+                    <option value="fdv">FDV</option>
+                </select>
+                <div class="error-message" id="subjectError">Por favor, selecione sua disciplina</div>
+            </div>
+
+            
+            <div class="form-group">
+                <form id="formSenha" action="#" method="POST">
+                    <label for="senha">Senha*</label>
+                    <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+                    <div id="erroSenha" class="error"></div>
+            
+                    <label for="confirmarSenha">Confirmar Senha*</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" required placeholder="Confirme sua senha">
+                    <div id="erroConfirmarSenha" class="error">
+                    </div>
+                </form>
+            
+
+            <!-- Botão -->
+            <button type="submit" class="btn-submit">Cadastrar</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            Cadastro realizado com sucesso!
+        </div>
+    </div>
+    <script src="funcionalidade.js"></script>
+</body>
+</html>
+
+<!--javascript-->
+<script>function validateForm(event) {
+    event.preventDefault();
+    let isValid = true;
+    const form = document.getElementById('teacherForm');
+    const successMessage = document.getElementById('successMessage');
+
+    // Resetar erros
+    document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+    // Validações
+    const fields = [
+        { id: 'name', min: 3, message: 'nameError' },
+        { id: 'email', regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'emailError' },
+        { id: 'phone', regex: /^\d{10,11}$/, message: 'phoneError' },
+        { id: 'subject', required: true, message: 'subjectError' },
+
+    ];
+
+    fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        const value = field.id === 'phone' ? input.value.replace(/\D/g, '') : input.value.trim();
+
+        if ((field.min && value.length < field.min) || 
+            (field.regex && !field.regex.test(value)) || 
+            (field.required && !value)) {
+            input.classList.add('error');
+            document.getElementById(field.message).style.display = 'block';
+            isValid = false;
+        }
+    });
+
+    if (isValid) {
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+    }
+}
+
+// Máscara para telefone
+document.getElementById('phone').addEventListener('input', e => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 2) value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    if (value.length > 9) value = `${value.slice(0, 9)}-${value.slice(9)}`;
+    e.target.value = value;
+});
+
+document.getElementById("formSenha").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var senha = document.getElementById("senha").value;
+        var confirmarSenha = document.getElementById("confirmarSenha").value;
+        var erroSenha = document.getElementById("erroSenha");
+        var erroConfirmarSenha = document.getElementById("erroConfirmarSenha");
+        var mensagemSucesso = document.getElementById("mensagemSucesso");
+
+        erroSenha.textContent = "";
+        erroConfirmarSenha.textContent = "";
+        mensagemSucesso.textContent = "";
+
+        // Validar comprimento mínimo da senha
+        if (senha.length < 6) {
+            erroSenha.textContent = "A senha deve ter pelo menos 6 caracteres.";
+            return;
+        }
+
+        // Verificar se as senhas coincidem
+        if (senha !== confirmarSenha) {
+            erroConfirmarSenha.textContent = "As senhas não coincidem. Tente novamente.";
+            return;
+        }
+
+        // Se tudo estiver certo, mostrar mensagem de sucesso
+        mensagemSucesso.textContent = "Senha criada com sucesso!";
+    });
+</script>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="ico" href="favicon_new.ico"/>
+    <title>Projetos</title>
+</head>
+
+<style>
+
+  :root {
+      --primary: #38BDF2;
+      --secondary: #4299e1;
+      --accent: #F2CB57;
+    }
+
+
+  /* Fonte global */
+  body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+/* Títulos principais e secundários */
+    h1, h3 {
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+/* Título principal */
+    h1 {
+      font-size: 3em;
+      color: #2980B9; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+/* Títulos secundários */
+    h3 {
+      font-size: 1.4em;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+/* Estilo para os projetos (conteúdo) */
+    #interscience, #pedal, #sala_de_musica, #jornal, #sala_de_podcast, #time, #pre_conselho, #feira, #detran, #programadores {
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 900px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+/* Efeito hover nas seções de projeto */
+    #interscience:hover, #pedal:hover, #sala_de_musica:hover, #jornal:hover, #sala_de_podcast:hover, #time:hover, #pre_conselho:hover, #feira:hover, #detran:hover, #programadores:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
+    }
+
+/* Bordas e decoração: Adicionando ícones ou elementos decorativos */
+    #interscience::before, #pedal::before, #sala_de_musica::before, #jornal::before, #sala_de_podcast::before, #time::before, #pre_conselho::before, #feira::before, #detran::before, #programadores::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, #2980B9, #8E44AD); /* Gradiente elegante */
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+/* Fundo */
+    #interscience, #sala_de_musica, #sala_de_podcast, #detran, #programadores, #pedal, #jornal, #time, #pre_conselho, #feira {
+      background-color: #ECF0F1; /* Azul suave */
+    }
+
+/* Estilo dos textos nos projetos */
+    #interscience h3, #pedal h3, #sala_de_musica h3, #jornal h3, #sala_de_podcast h3, #time h3, #pre_conselho h3, #feira h3, #detran h3, #programadores h3 {
+      color: #000000;
+      font-size: 1.2em;
+      font-weight: 400;
+      text-align: justify;
+    }
+
+/* Efeito de animação suave ao rolar a página */
+    @keyframes fadeIn {
+      0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    }
+
+    #interscience, #pedal, #sala_de_musica, #jornal, #sala_de_podcast, #time, #pre_conselho, #feira, #detran, #programadores {
+      animation: fadeIn 1s ease-out;
+    }
+
+/* Linha de divisão da página */
+    #linha{
+      border: 0;
+      height: 2px;
+      background-color: #333;
+      margin: 20px ;
+      text-align: center;
+      size: 10px;            
+    }
+
+    nav {
+      background: var(--primary);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+</style>
+
+<body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="quemSomos.html">Quem Somos</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="login.html">login</a></li>
+      </ul>
+    </nav>
+<br><br>
+       <h1>Projetos pedagógicos</h1>
+       <h3>No CEMI, visamos no aprendizado interdiciplinar, com projetos e saídas de campo.</h3>
+
+       <div id="interscience">
+       <h2>InterScience</h2> <br>
+       <h3>Visando a participação da maioria dos estudantes, reformulamos nosso interclasses, agora chamado de InterScience.</h3>
+       </div>
+
+       <div id="pedal">
+        <h2>Pedal da Paz</h2> <br>
+        <h3>Buscando criar nos alunos a empatia e o espírito de solidariedade, o Pedal da Paz é a culminancia desses projetos ao longo do ano.</h3>
+      </div>
+
+      <div id="sala_de_musica">
+        <h2>Sala de Música</h2> <br>
+        <h3>Incentivando nossos alunos a encontrarem seus talentos, temos uma belissima sala de música para que os estudantes descubram o que eles gostam.</h3>
+      </div>
+
+      <div id="jornal">
+        <h2>Jornal CEMI (2° ano)</h2> <br>
+        <h3>Desenvolvido ao longo do ano, com as visitas, saídas de campo e outros projetos, sua culminancia é a publicação da edição anual.</h3>
+      </div>
+
+      <div id="sala_de_podcast">
+        <h2>Sala de Podcast (2° ano)</h2> <br>
+        <h3>Juntamente com o jornal, ele é desenvolvido ao decorrer do ano, com entrevistas aos professores e funcionarios da escola.</h3>
+      </div>
+
+      <div id="time">
+        <h2>Time de Futsal e Vôlei</h2> <br>
+        <h3>Em colaboração com o professor de Educação Física, criamos um time de futsal e vôlei, com o objetivo de desenvolver a prática de algum esporte físico.</h3>
+      </div>
+
+      <div id="pre_conselho">
+        <h2>Pré-conselho</h2> <br>
+        <h3>Com o intuito de incluir os alunos nos conselhos de classe, convidamos o representantes e vices para participarem desse momento de grande importancia, visando não avaliar somente os estudantes, mas também os professores.</h3>
+      </div>
+
+      <div id="feira">
+        <h2>Feira do Empreendedorismo</h2> <br>
+        <h3>Desenvolvido ao longo do 2° semestre, a Feira do Empreendedorismo é a culminancia dos ensimentos dados ao longo do ano pelo curso técnico, sendo realizada, normalmente, na última semana de aula.</h3>
+      </div>
+
+<div hr id="linha"></div>
+
+      <h1>Projetos em Parceria:</h1>
+      <h3>Em nossa escola também temos projetos em parceria com outras instituições.</h3>
+
+      <div id="detran">
+        <h2>DETRAN nas Escolas</h2> <br>
+        <h3>Nossa escola, em parceria com o DETRAN-DF, desenvolvemos, no 2° semestre do 2° ano e 1° semestre do 3° ano, aulas teóricas, antecipando um passo que posteriormente seria pago, mas que em nossa escola é ofartado de maneira gratuita, desse modo, facilitando o processo de tirar a carteira de motorista.</h3>
+      </div>
+
+      <div id="programadores">
+        <h2>Programadores de Futuro</h2> <br>
+        <h3>Em parceria com o Instituto Formando Campeões Para a Vida, realiza-se em nossa escola aulas de programação, desenvolvendo em nossos estudantes o desejo de ingressarem em uma faculdade que cada vez mais vem ganhando notóriedade em nossa sociedade.</h3>
+      </div>
+
+      <footer id="contato">
+        <h3>Entre em Contato</h3>
+        <p>Telefone: (61) 3318-2816</p>
+        <p>Email: ced07.taguatinga@edu.se.df.gov.br</p>
+        <p>EQNM 36/38 ÁREA ESPECIAL S/N Taguatinga, St. M-Norte, Brasília - DF, 72145-513</p>
+        <p style="margin-top: 1rem;">© 2024 CEMI Taguatinga. Todos os direitos reservados.</p>
+      </footer>
+      
+</body>
+</html>
